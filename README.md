@@ -1,50 +1,27 @@
-# React + TypeScript + Vite
+ThreeElement.tsx 에는 scene안에 들어가는 오브젝트들을 작성하는 페이지이다.
+Landing.tsx는 scene,render,camera를 작성하는 곳이다.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-------------------------------------------------------------------------------------
 
-## Expanding the ESLint configuration
+1.Camera
+ - Perspective Camera (원근카메라,투시카메라)
+ - Orthographic Camera (직각)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+ 2.Scene
+ Three.js안에서는 모든 오브젝트들은 Mesh이다.그리고 mesh 는 geometry와 material로 이루어져있다.
+ -Geometry란 각 오브젝트들의 셰이프이고
+ -Material은 색상이나 질감등 geometry의 겉감이다.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+------------------------------------------------------------------------------------
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+3.Orbit Controls
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+4.Axes Helper
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+5.Grid Helper
+
+6.Leva
+- GUI controler
