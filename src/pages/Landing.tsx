@@ -5,6 +5,7 @@ import ThreeElement from "../ThreeElement";
 import { OrbitControls } from "@react-three/drei";
 import { AxesHelper, GridHelper } from "three";
 import { useControls } from "leva";
+import ThreeElementScn from "../ThreeElementScn";
 
 const Landing = () => {
   const color = useControls({ background: "white" });
@@ -33,7 +34,8 @@ const Landing = () => {
         // maxPolarAngle={180}
         />
         <color attach={"background"} args={[color.background]} />
-        <ThreeElement />
+        {/* <ThreeElement /> */}
+        <ThreeElementScn />
       </Canvas>
     </div>
   );
