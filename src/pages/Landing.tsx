@@ -5,17 +5,20 @@ import ThreeElement from "../ThreeElement";
 import { OrbitControls } from "@react-three/drei";
 import { AxesHelper, GridHelper } from "three";
 import { useControls } from "leva";
-import ThreeElementScn from "../ThreeElementScn";
+import MaterialTest from "../MaterialTest";
+import LightTest from "../LightTest";
+import InteractionTest from "../InteractionTest";
 
 const Landing = () => {
-  const color = useControls({ background: "white" });
+  const color = useControls({ background: "black" });
   const grid = useControls({
-    segment: { value: 10, min: 2, max: 100, step: 1 },
+    segment: { value: 50, min: 2, max: 100, step: 1 },
   });
 
   return (
     <div>
       <Canvas
+        shadows
         // orthographic -- 2D 카메라
         camera={{
           // zoom: 100,
@@ -26,7 +29,10 @@ const Landing = () => {
         }}
       >
         <axesHelper args={[5]} />
-        <gridHelper args={[20, grid.segment, 0xff0000, "black"]} />
+        <gridHelper
+          args={[50, grid.segment, 0xff0000, "white"]}
+          position-y={-1}
+        />
         <OrbitControls
         // minAzimuthAngle={180}
         // maxAzimuthAngle={180}
@@ -35,7 +41,9 @@ const Landing = () => {
         />
         <color attach={"background"} args={[color.background]} />
         {/* <ThreeElement /> */}
-        <ThreeElementScn />
+        {/* <MaterialTest /> */}
+        {/* <LightTest /> */}
+        <InteractionTest />
       </Canvas>
     </div>
   );
